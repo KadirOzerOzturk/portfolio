@@ -5,29 +5,34 @@ import Navbar from "./components/Navbar";
 import { Element } from 'react-scroll';
 import Socials from './components/Socials';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
     return (
         <div className="bg-custom-gray  font-kanit text-white min-h-screen flex flex-col">
             <div className='items-center justify-center flex flex-col'>
 
-            <Navbar />
-           
+                <Navbar />
+
             </div>
             <Socials />
-            <div className=' h-full flex flex-col items-center justify-center'> 
-            <Element name="home">
-                <Home  />
-            </Element>
-            <Element name="about">
-                <About />
-            </Element>
-            <Element name="projects">
-                <Projects />
-            </Element>
+            <div className=' h-full flex flex-col items-center justify-center'>
+                <Element name="home">
+                    <Home />
+                </Element>
+                <Element name="about">
+                    <About />
+                </Element>
+                <Element name="projects">
+                    <Projects />
+                </Element>
+                <Element name="contact">
+                    <Contact />
+                </Element>
+
             </div>
-            
-            {/* Add more sections here if needed */}
+
+
         </div>
     );
 }
