@@ -9,14 +9,10 @@ import Contact from './components/Contact';
 
 function App() {
     return (
-        <div className="bg-custom-gray  font-kanit text-white min-h-screen flex flex-col">
-            <div className='items-center justify-center flex flex-col'>
-
-                <Navbar />
-
-            </div>
+        <div className="bg-custom-gray font-kanit text-white min-h-screen flex flex-col">
+            <Navbar />
             <Socials />
-            <div className=' h-full flex flex-col items-center justify-center'>
+            <div className="h-full flex flex-col items-center justify-center">
                 <Element name="home">
                     <Home />
                 </Element>
@@ -29,10 +25,7 @@ function App() {
                 <Element name="contact">
                     <Contact />
                 </Element>
-
             </div>
-
-
         </div>
     );
 }
