@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
+import { Helmet } from 'react-helmet';
 
 function Projects() {
     const [repos, setRepos] = useState([]);
@@ -25,11 +26,19 @@ function Projects() {
 
     return (
         <div className="flex flex-col items-center justify-center my-7 w-full px-4 md:px-12">
+            <Helmet>
+                <meta name="description" content="Explore the GitHub repositories of Kadir Ozer Ozturk. View projects, descriptions, and more." />
+                <meta name="keywords" content="GitHub, Repositories, Portfolio, Projects, Kadir Ozer Ozturk" />
+                <meta name="author" content="Kadir Ozer Ozturk" />
+                <meta property="og:title" content="GitHub Repositories | Portfolio" />
+                <meta property="og:description" content="Explore the GitHub repositories of Kadir Ozer Ozturk. View projects, descriptions, and more." />
+                <meta property="og:type" content="website" />
+            </Helmet>
+
             <h2 className="text-2xl md:text-3xl font-semibold text-custom-purple mb-6">
                 GitHub Repositories
             </h2>
             
-            {/* Grid layout for cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
                 {repos.map((repo) => (
                     <div 
@@ -60,7 +69,6 @@ function Projects() {
                 ))}
             </div>
 
-            {/* See More Button */}
             <button 
                 onClick={navigate("https://github.com/KadirOzerOzturk")} 
                 className="mt-8 px-5 py-2 border border-custom-purple text-custom-purple rounded-md hover:bg-custom-purple hover:text-white transition-all text-sm md:text-base"
