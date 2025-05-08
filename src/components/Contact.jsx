@@ -11,6 +11,7 @@ function Contact() {
 
     const [status, setStatus] = useState(null);
     const [emailError, setEmailError] = useState('');
+    const [loading, setLoading] = useState(false); 
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -42,6 +43,8 @@ function Contact() {
             return;
         }
 
+        setLoading(true); 
+
         emailjs.send(
             process.env.REACT_APP_EMAILJS_SERVICE_ID,
             process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
@@ -57,13 +60,13 @@ function Contact() {
                 console.error("Error sending email:", error);
                 setStatus({ type: "error", message: "Failed to send message. ❌" });
             }
-        );
+        ).finally(() => {
+            setLoading(false);
+        });
     };
-
 
     return (
         <>
-
             <Helmet>
                 <meta name="description" content="Get in touch with Kadir Özer Öztürk, a passionate developer, via email or LinkedIn." />
                 <meta name="keywords" content="contact, email, LinkedIn, GitHub, Kadir Özer Öztürk" />
@@ -151,10 +154,10 @@ function Contact() {
 
                         <button
                             type="submit"
-                            disabled={!isFormValid()}
-                            className={`w-full py-3 bg-custom-purple text-white font-semibold rounded-md hover:bg-purple-600 transition-all ${!isFormValid() ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            disabled={!isFormValid() || loading}
+                            className={`w-full py-3 bg-custom-purple text-white font-semibold rounded-md hover:bg-purple-600 transition-all ${!isFormValid() || loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                         >
-                            Send Message
+                            {loading ? 'Sending...' : 'Send Message'}
                         </button>
                     </form>
                 </div>
