@@ -326,7 +326,7 @@ function Projects() {
                         : 'bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200'
                     }`}>
                         <div className="text-3xl font-bold text-blue-400 mb-2">
-                            {frontendProjects.length + backendProjects.length}+
+                            {15}+
                         </div>
                         <div className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                             {t('projects.stats.completed')}

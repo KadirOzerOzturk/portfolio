@@ -224,8 +224,8 @@ const resources = {
       // Home Page
       home: {
         role: "Junior Yazılım Mühendisi",
-        mainTitle: "İmkansızı Mümkün Kılmak 1'ler ve 0'lar Kullanarak",
-        subtitle: "Problem çözmek beni benzersiz kılan şey.",
+        mainTitle: "İmkansızı Mümkün Kılmak 0 ve 1'lere Bağlı",
+        subtitle: "Problem çözmek beni benzersiz kılan şeydir.",
         description: "Karmaşık zorlukları zarif çözümlere dönüştürüyorum.",
         resumeEng: "Özgeçmiş (ENG)",
         resumeTr: "Özgeçmiş (TR)",

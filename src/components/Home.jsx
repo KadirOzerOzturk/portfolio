@@ -66,7 +66,7 @@ function Home() {
         },
         { 
             name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
             color: "from-yellow-400 to-orange-500"
         }
     ];
