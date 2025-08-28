@@ -16,7 +16,7 @@ function Projects() {
             tech: ["React", "Node.js", "MongoDB", "Express"],
             gradient: "from-purple-500 to-pink-500",
             url: "https://shorterly.net/",
-            github: "https://github.com/KadirOzerOzturk/shorterly",
+            github: "https://github.com/KadirOzerOzturk",
             features: t('projects.projectData.shorterly.features', { returnObjects: true }),
             icon: "🔗",
             type: "Full Stack"
@@ -27,7 +27,7 @@ function Projects() {
             tech: ["React", "TypeScript", "Node.js", "Security"],
             gradient: "from-green-500 to-blue-500",
             url: "https://procguard.netlify.app/",
-            github: "https://github.com/KadirOzerOzturk/proguard",
+            github: "https://github.com/KadirOzerOzturk",
             features: t('projects.projectData.proguard.features', { returnObjects: true }),
             icon: "🛡️",
             type: "Security Platform"
@@ -41,7 +41,7 @@ function Projects() {
             description: t('projects.projectData.codegen.description'),
             tech: ["Golang", "CLI", "Code Generation", "File Management"],
             gradient: "from-blue-500 to-indigo-500",
-            github: "https://github.com/KadirOzerOzturk/codegen",
+            github: "https://github.com/KadirOzerOzturk",
             features: t('projects.projectData.codegen.features', { returnObjects: true }),
             icon: "⚙️",
             type: "CLI Tool"
@@ -51,7 +51,7 @@ function Projects() {
             description: t('projects.projectData.mibparser.description'),
             tech: ["Golang", "SNMP", "Parser", "Network Management"],
             gradient: "from-green-500 to-emerald-500",
-            github: "https://github.com/KadirOzerOzturk/mib-parser",
+            github: "https://github.com/KadirOzerOzturk",
             features: t('projects.projectData.mibparser.features', { returnObjects: true }),
             icon: "🌐",
             type: "Network Tool"
@@ -61,7 +61,7 @@ function Projects() {
             description: t('projects.projectData.springsecurity.description'),
             tech: ["Spring Boot", "Spring Security", "JWT", "PostgreSQL"],
             gradient: "from-red-500 to-orange-500",
-            github: "https://github.com/KadirOzerOzturk/spring-security",
+            github: "https://github.com/KadirOzerOzturk",
             features: t('projects.projectData.springsecurity.features', { returnObjects: true }),
             icon: "🔐",
             type: "Security System"
@@ -71,7 +71,7 @@ function Projects() {
             description: t('projects.projectData.eventbooking.description'),
             tech: ["Spring Boot", "PostgreSQL", "REST API", "JPA"],
             gradient: "from-purple-500 to-pink-500",
-            github: "https://github.com/KadirOzerOzturk/event-booking-backend",
+            github: "https://github.com/KadirOzerOzturk",
             features: t('projects.projectData.eventbooking.features', { returnObjects: true }),
             icon: "🎫",
             type: "Web Service"
