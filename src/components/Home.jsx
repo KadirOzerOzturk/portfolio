@@ -8,6 +8,7 @@ function Home() {
     const { isDark } = useAppContext();
     const [typedText, setTypedText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [downloadMessage, setDownloadMessage] = useState('');
     const fullText = t('home.mainTitle');
 
     useEffect(() => {
@@ -25,14 +26,23 @@ function Home() {
         }
     }, [currentIndex, fullText]);
 
-    const downloadResume = (lang) => {
-        const resumePath = lang === "tr"
-            ? "/assets/KadirOzerOzturk-CV.pdf"
-            : "/assets/KadirOzerOzturk-CV-ENG.pdf";
+    const getAssetPath = (fileName) => {
+        const publicUrl = process.env.PUBLIC_URL || '';
+        return `${publicUrl}/assets/${fileName}`;
+    };
 
-        const link = document.createElement("a");
-        link.href = resumePath;
-        link.setAttribute("download", resumePath.split("/").pop());
+    const downloadResume = (lang) => {
+        const trResume = getAssetPath('KadirOzerOzturk-CV.pdf');
+
+        if (lang === 'eng') {
+            setDownloadMessage(t('home.resumeFallbackNotice'));
+        } else {
+            setDownloadMessage('');
+        }
+
+        const link = document.createElement('a');
+        link.href = trResume;
+        link.setAttribute('download', trResume.split('/').pop());
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -114,20 +124,20 @@ function Home() {
                         {/* Aksiyon Butonları */}
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <button 
-                                onClick={() => downloadResume("eng")} 
+                                onClick={() => downloadResume("tr")} 
                                 className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105"
                             >
                                 <span className="relative z-10 flex items-center gap-2">
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
                                     </svg>
-                                    {t('home.resumeEng')}
+                                    {t('home.resumeTr')}
                                 </span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </button>
                             
                             <button 
-                                onClick={() => downloadResume("tr")} 
+                                onClick={() => downloadResume("eng")} 
                                 className={`group px-8 py-4 border-2 border-purple-400 text-purple-400 rounded-xl font-semibold text-lg hover:bg-purple-400 hover:text-white transition-all duration-300 hover:scale-105 ${isDark 
                                     ? 'hover:bg-purple-400' 
                                     : 'hover:bg-purple-500'
@@ -137,19 +147,25 @@ function Home() {
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
                                     </svg>
-                                    {t('home.resumeTr')}
+                                    {t('home.resumeEng')}
                                 </span>
                             </button>
                         </div>
 
+                        {downloadMessage && (
+                            <p className={`text-sm font-medium ${isDark ? 'text-amber-300' : 'text-amber-700'}`}>
+                                {downloadMessage}
+                            </p>
+                        )}
+
                         {/* İstatistikler */}
                         <div className="flex gap-8 pt-8">
                             <div className="text-center">
-                                <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-800'}`}>1+</div>
+                                <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-800'}`}>2+</div>
                                 <div className={isDark ? 'text-gray-400' : 'text-gray-600'}>{t('home.stats.experience')}</div>
                             </div>
                             <div className="text-center">
-                                <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-800'}`}>15+</div>
+                                <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-800'}`}>30+</div>
                                 <div className={isDark ? 'text-gray-400' : 'text-gray-600'}>{t('home.stats.projects')}</div>
                             </div>
                             <div className="text-center">

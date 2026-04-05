@@ -21,6 +21,8 @@ const resources = {
         description: "I transform complex challenges into elegant solutions.",
         resumeEng: "Resume (ENG)",
         resumeTr: "Resume (TR)",
+        resumeFallbackNotice: "English resume is not available yet. Downloaded Turkish resume instead.",
+        resumeDownloadError: "Resume file is currently unavailable.",
         stats: {
           experience: "Years Experience",
           projects: "Completed Projects",
@@ -229,6 +231,8 @@ const resources = {
         description: "Karmaşık zorlukları zarif çözümlere dönüştürüyorum.",
         resumeEng: "Özgeçmiş (ENG)",
         resumeTr: "Özgeçmiş (TR)",
+        resumeFallbackNotice: "İngilizce özgeçmiş henüz hazır değil. Türkçe özgeçmiş indirildi.",
+        resumeDownloadError: "Özgeçmiş dosyasına şu anda ulaşılamıyor.",
         stats: {
           experience: "Yıl Deneyim",
           projects: "Tamamlanan Proje",
