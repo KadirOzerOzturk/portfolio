@@ -15,7 +15,7 @@ function Projects() {
             description: t('projects.projectData.shorterly.description'),
             tech: ["React", "Node.js", "MongoDB", "Express"],
             gradient: "from-purple-500 to-pink-500",
-            url: "https://shorterly.net/",
+            url: "https://shorterly.netlify.app/",
             github: "https://github.com/KadirOzerOzturk",
             features: t('projects.projectData.shorterly.features', { returnObjects: true }),
             icon: "🔗",
